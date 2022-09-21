@@ -2,7 +2,8 @@
 
 App::App()
 {
-	m_pScreen = nullptr;
+	m_pWindow = nullptr;
+	m_pRenderer = nullptr;
 	m_Running = true;
 }
 

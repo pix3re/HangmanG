@@ -15,7 +15,8 @@ public:
 private:
 	bool m_Running = false;
 
-	SDL_Window* m_pScreen;
+	SDL_Window* m_pWindow;
+	SDL_Renderer* m_pRenderer;
 
 public:
 	bool OnInit();
