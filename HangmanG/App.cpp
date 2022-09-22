@@ -5,6 +5,8 @@ App::App()
 	m_pWindow = nullptr;
 	m_pRenderer = nullptr;
 	m_Running = true;
+
+	pSurfTest = nullptr;
 }
 
 int App::OnExecute()

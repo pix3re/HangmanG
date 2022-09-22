@@ -2,8 +2,8 @@
 #ifndef _APP_H_
 	#define _APP_H_
 
-
 #include <SDL.h>
+#include "Surface.h"
 
 class App
 {
@@ -17,6 +17,8 @@ private:
 
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
+
+	SDL_Surface* pSurfTest;
 
 public:
 	bool OnInit();
