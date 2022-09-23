@@ -36,3 +36,25 @@ bool Surface::OnDraw(SDL_Surface* surfDestination, SDL_Surface* surfSource, int 
 
 	return true;
 }
+
+bool Surface::OnDraw(SDL_Surface* surfDestination, SDL_Surface* surfSource, int x, int y, int x2, int y2, int width, int height)
+{
+	if (surfDestination == nullptr || surfSource == nullptr)
+	{
+		return false;
+	}
+
+	SDL_Rect destRect;
+	destRect.x = x;
+	destRect.y = y;
+
+	SDL_Rect srcRect;
+	srcRect.x = x2;
+	srcRect.y = y2;
+	srcRect.w = width;
+	srcRect.h = height;
+
+	SDL_BlitSurface(surfSource, &srcRect, surfDestination, &destRect);
+
+	return true;
+}

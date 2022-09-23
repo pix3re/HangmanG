@@ -17,6 +17,7 @@ private:
 
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
+	SDL_Surface* m_pDisplaySurface;
 
 	SDL_Surface* pSurfTest;
 

@@ -15,7 +15,15 @@ bool App::OnInit()
 
 	m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, SDL_RENDERER_ACCELERATED);
 
-	if (m_pWindow == NULL)
+	if (m_pWindow == NULL || m_pRenderer == NULL)
+	{
+		return false;
+	}
+
+	m_pDisplaySurface = SDL_GetWindowSurface(m_pWindow);
+	pSurfTest = SDL_LoadBMP("cactus.bmp");
+
+	if (pSurfTest == NULL)
 	{
 		return false;
 	}
