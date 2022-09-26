@@ -2,7 +2,5 @@
 
 void App::OnRender()
 {
-	Surface::OnDraw(m_pDisplaySurface, pSurfTest, 0, 0);
-
-	SDL_UpdateWindowSurface(m_pWindow);
+	SDL_RenderPresent(m_pRenderer);
 }

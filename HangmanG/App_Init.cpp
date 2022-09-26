@@ -20,13 +20,7 @@ bool App::OnInit()
 		return false;
 	}
 
-	m_pDisplaySurface = SDL_GetWindowSurface(m_pWindow);
-	pSurfTest = SDL_LoadBMP("cactus.bmp");
-
-	if (pSurfTest == NULL)
-	{
-		return false;
-	}
+	//IMG_Init(IMG_INIT_PNG);
 
 	return true;
 }

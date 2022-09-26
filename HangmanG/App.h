@@ -3,7 +3,6 @@
 	#define _APP_H_
 
 #include <SDL.h>
-#include "Surface.h"
 
 class App
 {
@@ -17,14 +16,13 @@ private:
 
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
-	SDL_Surface* m_pDisplaySurface;
 
-	SDL_Surface* pSurfTest;
 
 public:
 	bool OnInit();
 	void OnEvent(SDL_Event* event);
 	void OnLoop();
+	void OnPrepareRender();
 	void OnRender();
 	void OnCleanup();
 };

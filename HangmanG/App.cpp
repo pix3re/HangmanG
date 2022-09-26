@@ -5,8 +5,6 @@ App::App()
 	m_pWindow = nullptr;
 	m_pRenderer = nullptr;
 	m_Running = true;
-
-	pSurfTest = nullptr;
 }
 
 int App::OnExecute()
@@ -20,6 +18,8 @@ int App::OnExecute()
 
 	while (m_Running)
 	{
+		OnPrepareRender();
+
 		while (SDL_PollEvent(&Event))
 		{
 			OnEvent(&Event);
