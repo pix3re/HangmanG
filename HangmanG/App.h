@@ -3,6 +3,8 @@
 	#define _APP_H_
 
 #include <SDL.h>
+#include <SDL_image.h>
+#include "TextureManager.h"
 
 class App
 {
@@ -10,12 +12,23 @@ public:
 	App();
 
 	int OnExecute();
+	
 
 private:
 	bool m_Running = false;
 
+	const int m_FPS = 60;
+	const int m_frameDelay = 1000 / m_FPS;
+
+	Uint32 m_frameStart = 0;
+	int m_frameTime = 0;
+
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
+
+	// test variables
+	SDL_Texture* m_TestTexture;
+	SDL_Rect m_destRect;
 
 
 public:
@@ -25,6 +38,7 @@ public:
 	void OnPrepareRender();
 	void OnRender();
 	void OnCleanup();
+
 };
 
 #endif

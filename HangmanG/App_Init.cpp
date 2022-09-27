@@ -20,7 +20,11 @@ bool App::OnInit()
 		return false;
 	}
 
-	//IMG_Init(IMG_INIT_PNG);
+	IMG_Init(IMG_INIT_PNG);
+
+	m_TestTexture = TextureManager::LoadTexture("cactus.bmp", m_pRenderer);
+	m_destRect.h = 32;
+	m_destRect.w = 32;
 
 	return true;
 }

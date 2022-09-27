@@ -18,6 +18,8 @@ int App::OnExecute()
 
 	while (m_Running)
 	{
+		m_frameStart = SDL_GetTicks();
+
 		OnPrepareRender();
 
 		while (SDL_PollEvent(&Event))
@@ -27,6 +29,13 @@ int App::OnExecute()
 
 		OnLoop();
 		OnRender();
+
+		m_frameTime = SDL_GetTicks() - m_frameStart;
+
+		if (m_frameDelay > m_frameTime)\
+		{
+			SDL_Delay(m_frameDelay - m_frameTime);
+		}
 	}
 
 	OnCleanup();
