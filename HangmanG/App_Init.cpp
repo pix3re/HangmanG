@@ -22,9 +22,9 @@ bool App::OnInit()
 
 	IMG_Init(IMG_INIT_PNG);
 
-	m_TestTexture = TextureManager::LoadTexture("cactus.bmp", m_pRenderer);
 	m_destRect.h = 32;
 	m_destRect.w = 32;
+	m_TestTexture = TextureManager::LoadTexture("assets/player.png", m_pRenderer);
 
 	return true;
 }
