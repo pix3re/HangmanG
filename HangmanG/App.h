@@ -23,8 +23,8 @@ private:
 	Uint32 m_frameStart = 0;
 	int m_frameTime = 0;
 
-	SDL_Window* m_pWindow;
-	SDL_Renderer* m_pRenderer;
+	SDL_Window* m_pWindow = nullptr;
+	SDL_Renderer* m_pRenderer = nullptr;
 
 	// test variables
 	SDL_Texture* m_TestTexture;
