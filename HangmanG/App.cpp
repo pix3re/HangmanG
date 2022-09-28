@@ -1,9 +1,13 @@
 #include "App.h"
 
+Word* gameWord;
+
+SDL_Renderer* App::m_pRenderer = nullptr;
+
+
 App::App()
 {
 	m_pWindow = nullptr;
-	m_pRenderer = nullptr;
 	m_Running = true;
 }
 
@@ -27,7 +31,7 @@ int App::OnExecute()
 			OnEvent(&Event);
 		}
 
-		OnLoop();
+		OnUpdate();
 		OnRender();
 
 		m_frameTime = SDL_GetTicks() - m_frameStart;
@@ -65,9 +69,11 @@ bool App::OnInit()
 
 	IMG_Init(IMG_INIT_PNG);
 
-	m_destRect.h = 32;
-	m_destRect.w = 32;
-	m_TestTexture = TextureManager::LoadTexture("Assets/hanger.png", m_pRenderer);
+	//m_destRect.h = 32;
+	//m_destRect.w = 32;
+	//m_TestTexture = TextureManager::LoadTexture("Assets/hanger.png");
+
+	gameWord = new Word();
 
 	return true;
 }
@@ -80,7 +86,7 @@ void App::OnEvent(SDL_Event* event)
 	}
 }
 
-void App::OnLoop()
+void App::OnUpdate()
 {
 
 }
@@ -94,7 +100,8 @@ void App::OnPrepareRender()
 
 void App::OnRender()
 {
-	SDL_RenderCopy(m_pRenderer, m_TestTexture, NULL, &m_destRect);
+	//SDL_RenderCopy(m_pRenderer, m_TestTexture, NULL, &m_destRect);
+	gameWord->Render();
 	SDL_RenderPresent(m_pRenderer);
 }
 

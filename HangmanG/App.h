@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "TextureManager.h"
+#include "Word.h"
 
 class App
 {
@@ -12,6 +13,14 @@ public:
 	App();
 
 	int OnExecute();
+	bool OnInit();
+	void OnEvent(SDL_Event* event);
+	void OnUpdate();
+	void OnPrepareRender();
+	void OnRender();
+	void OnCleanup();
+
+	static SDL_Renderer* m_pRenderer;
 	
 
 private:
@@ -24,20 +33,6 @@ private:
 	int m_frameTime = 0;
 
 	SDL_Window* m_pWindow = nullptr;
-	SDL_Renderer* m_pRenderer = nullptr;
-
-	// test variables
-	SDL_Texture* m_TestTexture;
-	SDL_Rect m_destRect;
-
-
-public:
-	bool OnInit();
-	void OnEvent(SDL_Event* event);
-	void OnLoop();
-	void OnPrepareRender();
-	void OnRender();
-	void OnCleanup();
 
 };
 
